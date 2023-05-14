@@ -57,7 +57,6 @@ export const TypingGraph: React.FC<TypingGraphProps> = (
 	const titles = ["WPM", "Accuracy"];
 	const themeColors = daisyui.config?.theme?.extend
 		?.colors as unknown as Record<string, any>;
-	console.log(themeColors);
 
 	const ordinalColors = [
 		themeColors.accent(100),
