@@ -5,8 +5,8 @@ import { Roboto_Mono } from "next/font/google";
 const roboto_mono = Roboto_Mono({ subsets: ["latin"] });
 
 export const metadata = {
-	title: "TypeTest",
-	description: "TypeTest is a WPM and Accuracy tester for typing speed"
+	title: "Typet",
+	description: "WPM, CPM and Accuracy test online"
 };
 
 export default async function RootLayout({

@@ -6,7 +6,7 @@ export const Navbar: React.FC = () => {
 			<Link
 				href={"/"}
 				className="text-3xl font-bold">
-				TypeTest
+				Typet
 			</Link>
 		</nav>
 	);
