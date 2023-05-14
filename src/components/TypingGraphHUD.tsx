@@ -12,7 +12,7 @@ export const TypingGraphHUD: React.FC<TypingGraphHUDProps> = (
 	const data = hasData ? props.data[props.data.length - 1].data : undefined;
 
 	return (
-		<span className="absolute right-0 z-10 w-full rounded-bl rounded-tr bg-secondary bg-opacity-50 p-2 text-center text-2xl font-bold sm:w-auto">
+		<span className="absolute right-0 z-10 w-full rounded-bl rounded-tr bg-secondary bg-opacity-70 p-2 text-center text-2xl font-bold sm:w-auto">
 			{hasData ? (
 				<>
 					<span className={wpmColor(data!.wpm)}>

@@ -80,37 +80,42 @@ export default function TypingTest(props: TypingTestProps) {
 			</div>
 		</div>
 	) : (
-		<div className="flex flex-col items-center gap-2">
-			<div>
+		<div className="flex flex-col gap-2">
+			<div className="flex justify-between">
 				<WordListSelector
 					getWordList={props.getWordList}
 					onChange={setWordList}
 					defaultList={props.defaultList}
 					wordLists={props.wordLists}
 				/>
+				<span>
+					<span className="kbd">Shift + Enter</span> to end test
+				</span>
 			</div>
-			<div className="relative h-52 w-full rounded-md border-2">
-				<TypingGraphHUD data={data} />
-				<ParentSize>
-					{({ width, height }) => (
-						<TypingGraph
-							width={width}
-							height={height}
-							data={data}></TypingGraph>
-					)}
-				</ParentSize>
+			<div className="flex flex-col items-center gap-2">
+				<div className="relative h-52 w-full rounded-md border-2">
+					<TypingGraphHUD data={data} />
+					<ParentSize>
+						{({ width, height }) => (
+							<TypingGraph
+								width={width}
+								height={height}
+								data={data}></TypingGraph>
+						)}
+					</ParentSize>
+				</div>
+				<TypingArea
+					wordList={wordList}
+					onReset={() => setData([])}
+					onComplete={x => {
+						addData(x.data);
+						setTime(x.time);
+						setDone(true);
+						setSaves([...saves, x]);
+					}}
+					onData={addData}
+				/>
 			</div>
-			<TypingArea
-				wordList={wordList}
-				onReset={() => setData([])}
-				onComplete={x => {
-					addData(x.data);
-					setTime(x.time);
-					setDone(true);
-					setSaves([...saves, x]);
-				}}
-				onData={addData}
-			/>
 		</div>
 	);
 }

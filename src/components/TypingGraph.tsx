@@ -72,7 +72,7 @@ export const TypingGraph: React.FC<TypingGraphProps> = (
 		<div className="relative">
 			<Ordinal
 				direction="row"
-				className="absolute bottom-0 m-2 gap-3"
+				className="absolute bottom-0 m-2 gap-3 rounded-md bg-secondary bg-opacity-70 p-2"
 				scale={ordinalScale}></Ordinal>
 			<svg
 				width={width}
