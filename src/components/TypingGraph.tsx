@@ -56,11 +56,11 @@ export const TypingGraph: React.FC<TypingGraphProps> = (
 
 	const titles = ["WPM", "Accuracy"];
 	const themeColors = daisyui.config?.theme?.extend
-		?.colors as unknown as Record<string, any>;
+		?.colors as unknown as Record<string, string>;
 
 	const ordinalColors = [
-		themeColors.accent(100),
-		themeColors["base-content"](100)
+		themeColors.accent.replace("<alpha-value>", "100"),
+		themeColors["base-content"].replace("<alpha-value>", "100")
 	];
 
 	const ordinalScale = scaleOrdinal({
